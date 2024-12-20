@@ -2,18 +2,35 @@ import Link from "next/link";
 import Connect from "./Connect";
 import { Button } from "./ui/button";
 import Image from "next/image";
+import { Roboto } from "next/font/google";
+
+const roboto = Roboto({
+  weight: "400",
+  subsets: ["latin"],
+});
 
 const Dashboard = () => {
   return (
     <div className="flex flex-col gap-16 h-screen">
       <section className="flex justify-between items-center">
-        <h1 className="text-4xl font-bold">Ocean Finance</h1>
+        <div className="flex gap-2 items-center">
+          <Image
+            src={"/images/hero.svg"}
+            alt="hero-image"
+            width={50}
+            height={50}
+            className="border-none"
+          />
+          <h1 className="text-4xl font-bold">Ocean Finance</h1>
+        </div>
 
         <Connect />
       </section>
 
       {/* HERO SECTION  */}
-      <section className="flex flex-col gap-5  text-center ">
+      <section
+        className={`${roboto.className} flex flex-col gap-5  text-center`}
+      >
         <p className="text-7xl font-bold">
           The Marketplace for On-Chain Borrowing and Lending
         </p>
@@ -35,11 +52,11 @@ const Dashboard = () => {
       <section className="-mt-24 z-0">
         {/* Add any images or content here */}
         <Image
-          src={"/images/eth.png"}
+          src={"/images/hero.svg"}
           width="700"
           height="400"
           alt="hero image"
-          className="w-full h-[400px] rounded-xl border"
+          className="w-full h-[400px] rounded-lg border"
         />
       </section>
     </div>

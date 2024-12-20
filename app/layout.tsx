@@ -23,6 +23,9 @@ export const metadata: Metadata = {
   title: "Ocean Finance - Testnet",
   description:
     "Ocean Finance is a testnet platform on Ethereum that enables borrowing and lending of digital assets, allowing users to engage in decentralized finance (DeFi) transactions in a safe and controlled environment.",
+  icons: {
+    icon: "/images/icon.svg",
+  },
 };
 
 export default function RootLayout({
