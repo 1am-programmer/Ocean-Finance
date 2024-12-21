@@ -3,6 +3,7 @@ import Connect from "./Connect";
 import { Button } from "./ui/button";
 import Image from "next/image";
 import { Roboto } from "next/font/google";
+import About from "./About";
 
 const roboto = Roboto({
   weight: "400",
@@ -59,6 +60,8 @@ const Dashboard = () => {
           className="w-full h-[400px] rounded-lg border"
         />
       </section>
+
+      <About />
     </div>
   );
 };
