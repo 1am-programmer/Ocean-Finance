@@ -2,6 +2,7 @@ import React from "react";
 import { FaDiscord, FaTelegram, FaXTwitter } from "react-icons/fa6";
 import { Poppins } from "next/font/google";
 import Link from "next/link";
+import Image from "next/image";
 
 const poppins = Poppins({
   weight: "400",
@@ -9,7 +10,7 @@ const poppins = Poppins({
 });
 const Socials = () => {
   return (
-    <div className="bg-gray-400 rounded-xl py-10 px-10">
+    <div className="bg-gray-200 rounded-xl py-5 px-10 flex  justify-between items-center">
       <section className=" flex flex-col gap-3  ">
         <p className={`${poppins.className} text-xl`}>Join our community !</p>
         <p>
@@ -37,6 +38,16 @@ const Socials = () => {
             <FaDiscord />
           </Link>
         </section>
+      </section>
+
+      <section>
+        <Image
+          src={"/images/community.svg"}
+          height={300}
+          width={300}
+          alt="community"
+          className="h-[250px]  w-[250px]"
+        />
       </section>
     </div>
   );
