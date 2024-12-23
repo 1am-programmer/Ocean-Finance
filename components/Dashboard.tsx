@@ -4,6 +4,8 @@ import { Button } from "./ui/button";
 import Image from "next/image";
 import { Roboto } from "next/font/google";
 import About from "./About";
+import Socials from "./Socials";
+import Footer from "./Footer";
 
 const roboto = Roboto({
   weight: "400",
@@ -27,7 +29,6 @@ const Dashboard = () => {
 
         <Connect />
       </section>
-
       {/* HERO SECTION  */}
       <section
         className={`${roboto.className} flex flex-col gap-5  text-center`}
@@ -39,7 +40,6 @@ const Dashboard = () => {
           Currently live on Base Sepolia Testnet. Mainnet launch coming soon.
         </p>
       </section>
-
       <Link href={"/testnet"} className="flex justify-center items-center">
         <Button
           className="bg-blue-500  hover:bg-blue-700 rounded-xl px-8 py-8 text-xl z-10 shadow-md shadow-blue"
@@ -48,7 +48,6 @@ const Dashboard = () => {
           Launch Testnet
         </Button>
       </Link>
-
       {/* Image Section */}
       <section className="-mt-24 z-0">
         {/* Add any images or content here */}
@@ -60,8 +59,10 @@ const Dashboard = () => {
           className="w-full h-[400px] rounded-lg border"
         />
       </section>
-
       <About />
+      <Socials />
+      <hr className="-mx-[9.5rem]" />
+      <Footer />
     </div>
   );
 };
