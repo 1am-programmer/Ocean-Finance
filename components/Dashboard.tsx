@@ -50,7 +50,6 @@ const Dashboard = () => {
       </Link>
       {/* Image Section */}
       <section className="-mt-24 z-0">
-        {/* Add any images or content here */}
         <Image
           src={"/images/hero.svg"}
           width="700"

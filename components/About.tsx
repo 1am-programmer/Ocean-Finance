@@ -20,7 +20,7 @@ const jost = Jost({
 const About = () => {
   return (
     <div className={`${jost.className} py-10`}>
-      <section className="flex flex-col gap-16 py-5">
+      <section className="flex flex-col gap-8 py-1">
         <p className={`text-3xl  text-center`}>
           Working on-chain with the best community
         </p>
@@ -91,7 +91,7 @@ const About = () => {
         </section>
       </div>
 
-      <section className="flex flex-col gap-16 py-5">
+      <section className="flex flex-col gap-8 py-1">
         <p className={`text-3xl  text-center`}>Backed by trusted partners</p>
         <Partners />
       </section>
