@@ -12,7 +12,7 @@ const Socials = () => {
   return (
     <div className="bg-gray-200 rounded-xl py-5 px-10 flex  justify-between items-center">
       <section className=" flex flex-col gap-3  ">
-        <p className={`${poppins.className} text-xl`}>Join our community !</p>
+        <h3 className={`${poppins.className} text-xl`}>Join our community !</h3>
         <p>
           Be the first to hear about community announcements and join the
           discussion!

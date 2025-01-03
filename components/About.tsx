@@ -92,7 +92,7 @@ const About = () => {
       </div>
 
       <section className="flex flex-col gap-8 py-1">
-        <p className={`text-3xl  text-center`}>Backed by trusted partners</p>
+        <h3 className={`text-3xl  text-center`}>Backed by trusted partners</h3>
         <Partners />
       </section>
     </div>

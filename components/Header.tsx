@@ -9,6 +9,24 @@ const roboto = Roboto({
   subsets: ["latin"],
 });
 
+const pageLinks = [
+  {
+    name: "Portfolio",
+    href: "/portfolio",
+    style: "hover:bg-gray-100 rounded-xl px-2 py-1",
+  },
+  {
+    name: "Borrow",
+    href: "/borrow",
+    style: "hover:bg-gray-100 rounded-xl px-2 py-1",
+  },
+  {
+    name: "Lend",
+    href: "/lend",
+    style: "hover:bg-gray-100 rounded-xl px-2 py-1",
+  },
+];
+
 const Header = () => {
   return (
     <div>
@@ -27,30 +45,11 @@ const Header = () => {
           </div>
 
           <section className="flex items-center">
-            <Link
-              href={"/portfolio"}
-              className="hover:bg-gray-100 rounded-xl px-2 py-1"
-            >
-              Portfolio
-            </Link>
-            <Link
-              href={"/borrow"}
-              className="hover:bg-gray-100 rounded-xl px-2 py-1"
-            >
-              Borrow
-            </Link>
-            <Link
-              href={"/lend"}
-              className="hover:bg-gray-100 rounded-xl px-2 py-1"
-            >
-              Lend
-            </Link>
-            <Link
-              href={"/earn"}
-              className="hover:bg-gray-100 rounded-xl px-2 py-1"
-            >
-              Earn
-            </Link>
+            {pageLinks.map((link) => (
+              <Link href={link.href} className={link.style}>
+                {link.name}
+              </Link>
+            ))}
           </section>
         </div>
 
