@@ -1,6 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import { FaDiscord, FaTelegram, FaXTwitter } from "react-icons/fa6";
+import { FaGithub } from "react-icons/fa";
 import Link from "next/link";
 
 import { Jost } from "next/font/google";
@@ -48,6 +49,13 @@ const Footer = () => {
           className="text-2xl hover:text-blue-500"
         >
           <FaDiscord />
+        </Link>
+
+        <Link
+          href={"https://github.com/1am-programmer/Ocean-Finance"}
+          className="text-2xl hover:text-blue-500"
+        >
+          <FaGithub />
         </Link>
       </section>
     </div>

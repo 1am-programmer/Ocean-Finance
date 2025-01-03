@@ -6,6 +6,7 @@ import { Roboto } from "next/font/google";
 import About from "./About";
 import Socials from "./Socials";
 import Footer from "./Footer";
+import { InfiniteMovingCardsDemo } from "./Testimonial";
 
 const roboto = Roboto({
   weight: "400",
@@ -67,3 +68,4 @@ const Dashboard = () => {
 };
 
 export default Dashboard;
+

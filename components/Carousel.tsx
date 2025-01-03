@@ -17,9 +17,9 @@ const communityNames = [
   "Future Builders",
   "Code Collective",
   "Digital Nomads",
-  "Startup Hub",
-  "Design Pioneers",
-  "Global Collaborators",
+  // "Startup Hub",
+  // "Design Pioneers",
+  // "Global Collaborators",
 ];
 
 const partnerNames = [
@@ -28,14 +28,14 @@ const partnerNames = [
   "Future Enterprises",
   "DesignWorks",
   "Creative Studios",
-  "NextGen Solutions",
-  "Global Partnerships",
-  "Digital Innovators",
+  // "NextGen Solutions",
+  // "Global Partnerships",
+  // "Digital Innovators",
 ];
 
 export const Community = () => {
   return (
-    <div className={`${rubik.className}`}>
+    <div className={`${rubik.className} flex  justify-center`}>
       <ul className="flex gap-5 text-xl">
         {communityNames.map((community) => (
           <li className="text-nowrap">{community}</li>
@@ -47,7 +47,7 @@ export const Community = () => {
 
 export const Partners = () => {
   return (
-    <div className={`${rubik2.className}`}>
+    <div className={`${rubik2.className}  flex justify-center `}>
       <ul className="flex gap-5 text-xl">
         {partnerNames.map((partner) => (
           <li className="text-nowrap">{partner}</li>

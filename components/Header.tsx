@@ -23,7 +23,7 @@ const Header = () => {
               height={50}
               className="border-none"
             />
-            <h1 className="text-4xl font-bold">Ocean Finance</h1>
+            {/* <h1 className="text-4xl font-bold">Ocean Finance</h1> */}
           </div>
 
           <section className="flex items-center">
