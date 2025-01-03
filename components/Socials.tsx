@@ -20,7 +20,7 @@ const Socials = () => {
 
         <section className="flex gap-3">
           <Link
-            href={"http://x.com/0x_Danny_"}
+            href={"http://x.com/0xDaniiel"}
             className="text-2xl hover:text-blue-500"
           >
             <FaXTwitter />

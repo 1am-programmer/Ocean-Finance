@@ -32,11 +32,11 @@ const Dashboard = () => {
       </section>
       {/* HERO SECTION  */}
       <section
-        className={`${roboto.className} flex flex-col gap-5  text-center`}
+        className={`${roboto.className} flex flex-col gap-2  text-center`}
       >
-        <p className="text-7xl font-bold">
+        <h3 className="text-7xl font-bold">
           The Marketplace for On-Chain Borrowing and Lending
-        </p>
+        </h3>
         <p>
           Currently live on Base Sepolia Testnet. Mainnet launch coming soon.
         </p>
@@ -68,4 +68,3 @@ const Dashboard = () => {
 };
 
 export default Dashboard;
-

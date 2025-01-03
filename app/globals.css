@@ -6,6 +6,11 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+p {
+  color: gray;
+  padding-top: 5px;
+}
+
 @layer utilities {
   .text-balance {
     text-wrap: balance;

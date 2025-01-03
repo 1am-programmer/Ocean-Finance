@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
-import { Poppins } from "next/font/google";
+import { Roboto } from "next/font/google";
 
-const poppins = Poppins({
+const roboto = Roboto({
   weight: "400",
   subsets: ["latin"],
 });
@@ -35,7 +35,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${poppins} antialiased mx-auto max-w-7xl p-10 `}>
+      <body className={`${roboto} antialiased mx-auto max-w-7xl p-10 `}>
         {children}
       </body>
     </html>

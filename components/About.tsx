@@ -21,9 +21,9 @@ const About = () => {
   return (
     <div className={`${jost.className} py-10`}>
       <section className="flex flex-col gap-8 py-1">
-        <p className={`text-3xl  text-center`}>
+        <h2 className={`text-3xl  text-center`}>
           Working on-chain with the best community
-        </p>
+        </h2>
 
         <Community />
       </section>
