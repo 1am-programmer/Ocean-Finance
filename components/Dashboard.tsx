@@ -38,7 +38,8 @@ const Dashboard = () => {
           The Marketplace for On-Chain Borrowing and Lending
         </h3>
         <p>
-          Currently live on Base Sepolia Testnet. Mainnet launch coming soon.
+          Currently live on Arbitrum Sepolia Testnet. Mainnet launch coming
+          soon.
         </p>
       </section>
       <Link href={"/testnet"} className="flex justify-center items-center">

@@ -31,7 +31,7 @@ const Activity = () => {
             </p>
           </CardContent>
 
-          <CardFooter className="border rounded-xl py-2 px-2 justify-center flex  border-gray-400 ">
+          <CardFooter className="border rounded-xl py-2 px-2 justify-center flex  border-gray-200 cursor-pointer">
             Read More
           </CardFooter>
         </Card>
