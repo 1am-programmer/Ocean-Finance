@@ -32,7 +32,7 @@ const Activity = () => {
           </CardContent>
 
           <CardFooter className="border rounded-xl py-2 px-2 justify-center flex  border-gray-200 cursor-pointer">
-            Read More
+            <Link href={"/testnet/read-more"}>Read More</Link>
           </CardFooter>
         </Card>
       </section>
