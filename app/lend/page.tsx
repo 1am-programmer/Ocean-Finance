@@ -1,9 +1,10 @@
 import React from "react";
-import Borrow from "@/components/Borrow";
+import Lend from "@/components/Lend";
+
 const page = () => {
   return (
     <div>
-      <Borrow />
+      <Lend />
     </div>
   );
 };

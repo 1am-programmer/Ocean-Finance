@@ -1,9 +1,10 @@
 import React from "react";
-import Borrow from "@/components/Borrow";
+import Market from "@/components/Market";
+
 const page = () => {
   return (
     <div>
-      <Borrow />
+      <Market />
     </div>
   );
 };

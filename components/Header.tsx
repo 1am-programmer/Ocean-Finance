@@ -11,13 +11,8 @@ const roboto = Roboto({
 
 const pageLinks = [
   {
-    name: "Dashboard",
-    href: "/dashboard",
-    style: "hover:bg-gray-100 rounded-xl px-2 py-1",
-  },
-  {
-    name: "Markets",
-    href: "/markets",
+    name: "Market",
+    href: "/market",
     style: "hover:bg-gray-100 rounded-xl px-2 py-1",
   },
   {
@@ -30,11 +25,11 @@ const pageLinks = [
     href: "/lend",
     style: "hover:bg-gray-100 rounded-xl px-2 py-1",
   },
-  {
-    name: "Portfolio",
-    href: "/portfolio",
-    style: "hover:bg-gray-100 rounded-xl px-2 py-1",
-  },
+  // {
+  //   name: "Portfolio",
+  //   href: "/portfolio",
+  //   style: "hover:bg-gray-100 rounded-xl px-2 py-1",
+  // },
 ];
 
 const Header = () => {
@@ -43,16 +38,16 @@ const Header = () => {
       {" "}
       <section className="flex justify-between items-center">
         <div className="flex items-center gap-5">
-          <div className="flex gap-2 items-center">
+          <Link href={"/"} className="flex gap-2 items-center">
             <Image
               src={"/images/hero.svg"}
               alt="hero-image"
-              width={50}
+              width={40}
               height={50}
               className="border-none"
             />
-            {/* <h1 className="text-4xl font-bold">Ocean Finance</h1> */}
-          </div>
+            {/* <h1 className="text-2xl font-bold">Ocean Finance</h1> */}
+          </Link>
 
           <section className="flex items-center">
             {pageLinks.map((link) => (

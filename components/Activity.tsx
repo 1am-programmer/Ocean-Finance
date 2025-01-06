@@ -4,6 +4,7 @@ import Connect from "./Connect";
 import { GoLinkExternal } from "react-icons/go";
 import { Button } from "./ui/button";
 import Link from "next/link";
+import { run } from "node:test";
 
 const Activity = () => {
   return (
@@ -32,7 +33,7 @@ const Activity = () => {
           </CardContent>
 
           <CardFooter className="border rounded-xl py-2 px-2 justify-center flex  border-gray-200 cursor-pointer">
-            <Link href={"/testnet/read-more"}>Read More</Link>
+            <Link href={"/dashboard/read-more"}>Read More</Link>
           </CardFooter>
         </Card>
       </section>

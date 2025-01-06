@@ -41,7 +41,7 @@ const Dashboard = () => {
           soon.
         </p>
       </section>
-      <Link href={"/testnet"} className="flex justify-center items-center">
+      <Link href={"/dashboard"} className="flex justify-center items-center">
         <Button
           className="bg-blue-500  hover:bg-blue-700 rounded-xl px-8 py-8 text-xl z-10 shadow-md shadow-blue"
           id="launch"
