@@ -11,8 +11,13 @@ const roboto = Roboto({
 
 const pageLinks = [
   {
-    name: "Portfolio",
-    href: "/portfolio",
+    name: "Dashboard",
+    href: "/dashboard",
+    style: "hover:bg-gray-100 rounded-xl px-2 py-1",
+  },
+  {
+    name: "Markets",
+    href: "/markets",
     style: "hover:bg-gray-100 rounded-xl px-2 py-1",
   },
   {
@@ -23,6 +28,11 @@ const pageLinks = [
   {
     name: "Lend",
     href: "/lend",
+    style: "hover:bg-gray-100 rounded-xl px-2 py-1",
+  },
+  {
+    name: "Portfolio",
+    href: "/portfolio",
     style: "hover:bg-gray-100 rounded-xl px-2 py-1",
   },
 ];

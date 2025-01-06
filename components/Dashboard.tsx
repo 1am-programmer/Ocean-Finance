@@ -30,7 +30,6 @@ const Dashboard = () => {
 
         <Connect />
       </section>
-      {/* HERO SECTION  */}
       <section
         className={`${roboto.className} flex flex-col gap-2  text-center`}
       >
@@ -50,7 +49,6 @@ const Dashboard = () => {
           Launch Testnet
         </Button>
       </Link>
-      {/* Image Section */}
       <section className="-mt-24 z-0">
         <Image
           src={"/images/hero.svg"}
