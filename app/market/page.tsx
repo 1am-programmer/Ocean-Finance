@@ -3,7 +3,7 @@ import Market from "@/components/Market";
 
 const page = () => {
   return (
-    <div>
+    <div className="">
       <Market />
     </div>
   );
