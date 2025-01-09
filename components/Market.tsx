@@ -105,7 +105,6 @@ const marketData: MultiCoinMarketData[] = [
   },
 ];
 
-// Tooltip formatter for multi-coin data
 const formatTooltip = (value: number, name: string) => [
   `${value}`,
   name.toUpperCase(),
@@ -114,7 +113,6 @@ const formatTooltip = (value: number, name: string) => [
 const MarketChart: React.FC = () => {
   return (
     <Card className="shadow-none">
-      {/* Card Header */}
       <CardHeader>
         <CardTitle className="text-xl font-bold">
           Ethereum Network Market Overview
@@ -125,7 +123,6 @@ const MarketChart: React.FC = () => {
         </CardDescription>
       </CardHeader>
 
-      {/* Card Content */}
       <CardContent>
         <ResponsiveContainer width="100%" height={400}>
           <ComposedChart data={marketData}>
@@ -145,7 +142,6 @@ const MarketChart: React.FC = () => {
               activeDot={{ r: 8 }}
             />
 
-            {/* USDT Price Line */}
             <Line
               type="monotone"
               dataKey="usdtClose"
@@ -155,7 +151,6 @@ const MarketChart: React.FC = () => {
               activeDot={{ r: 8 }}
             />
 
-            {/* ETH Volume Bar */}
             <Bar
               dataKey="ethVolume"
               name="ETH Volume"
@@ -164,7 +159,6 @@ const MarketChart: React.FC = () => {
               barSize={8}
             />
 
-            {/* USDT Volume Bar */}
             <Bar
               dataKey="usdtVolume"
               name="USDT Volume"
@@ -176,7 +170,6 @@ const MarketChart: React.FC = () => {
         </ResponsiveContainer>
       </CardContent>
 
-      {/* Card Footer */}
       <CardFooter className="flex justify-between">
         <p className="text-sm text-gray-500">Data updated as of today</p>
         <a
