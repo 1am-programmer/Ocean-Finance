@@ -1,6 +1,8 @@
 import Activity from "@/components/Activity";
 import Header from "@/components/Header";
 import Tasks from "@/components/Tasks";
+import { Card, CardContent, CardTitle, CardFooter } from "@/components/ui/card";
+
 import React from "react";
 import { FaPenFancy } from "react-icons/fa";
 

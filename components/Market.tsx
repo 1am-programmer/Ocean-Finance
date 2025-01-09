@@ -1,16 +1,17 @@
 "use client";
 
 import { useState } from "react";
-import { Bar, BarChart, CartesianGrid, XAxis } from "recharts";
-
 import {
-  ChartConfig,
-  ChartContainer,
-  ChartLegend,
-  ChartLegendContent,
-  ChartTooltip,
-  ChartTooltipContent,
-} from "@/components/ui/chart";
+  ResponsiveContainer,
+  ComposedChart,
+  CartesianGrid,
+  XAxis,
+  YAxis,
+  Tooltip,
+  Legend,
+  Line,
+  Bar,
+} from "recharts";
 
 import {
   Card,
@@ -21,100 +22,158 @@ import {
   CardContent,
 } from "@/components/ui/card";
 
-// Define the type for chart data
-interface ChartData {
-  network: string;
-  eth: number;
-  usdt: number;
+interface MultiCoinMarketData {
+  date: string;
+  ethOpen: number;
+  ethHigh: number;
+  ethLow: number;
+  ethClose: number;
+  usdtOpen: number;
+  usdtHigh: number;
+  usdtLow: number;
+  usdtClose: number;
+  ethVolume: number;
+  usdtVolume: number;
 }
 
-// Define chart data
-const chartData: ChartData[] = [
-  { network: "Ethereum Mainnet", eth: 186, usdt: 80 },
-  { network: "Polygon", eth: 305, usdt: 200 },
-  { network: "Arbitrum", eth: 237, usdt: 120 },
-  { network: "Optimism", eth: 73, usdt: 190 },
-  { network: "Binance Smart Chain", eth: 209, usdt: 130 },
-  { network: "Avalanche", eth: 214, usdt: 140 },
+// Define mock market data
+const marketData: MultiCoinMarketData[] = [
+  {
+    date: "2025-01-01",
+    ethOpen: 1800,
+    ethHigh: 1900,
+    ethLow: 1750,
+    ethClose: 1850,
+    usdtOpen: 1,
+    usdtHigh: 1.02,
+    usdtLow: 0.99,
+    usdtClose: 1.01,
+    ethVolume: 500,
+    usdtVolume: 800,
+  },
+  {
+    date: "2025-01-02",
+    ethOpen: 1850,
+    ethHigh: 1950,
+    ethLow: 1800,
+    ethClose: 1900,
+    usdtOpen: 1.01,
+    usdtHigh: 1.03,
+    usdtLow: 0.98,
+    usdtClose: 1,
+    ethVolume: 600,
+    usdtVolume: 850,
+  },
+  {
+    date: "2025-01-03",
+    ethOpen: 1900,
+    ethHigh: 2000,
+    ethLow: 1850,
+    ethClose: 1950,
+    usdtOpen: 1,
+    usdtHigh: 1.04,
+    usdtLow: 0.97,
+    usdtClose: 1.02,
+    ethVolume: 700,
+    usdtVolume: 780,
+  },
+  {
+    date: "2025-01-04",
+    ethOpen: 1950,
+    ethHigh: 2050,
+    ethLow: 1900,
+    ethClose: 2000,
+    usdtOpen: 1.02,
+    usdtHigh: 1.05,
+    usdtLow: 0.98,
+    usdtClose: 1.03,
+    ethVolume: 650,
+    usdtVolume: 820,
+  },
+  {
+    date: "2025-01-05",
+    ethOpen: 2000,
+    ethHigh: 2100,
+    ethLow: 1950,
+    ethClose: 2050,
+    usdtOpen: 1.03,
+    usdtHigh: 1.06,
+    usdtLow: 1,
+    usdtClose: 1.05,
+    ethVolume: 550,
+    usdtVolume: 870,
+  },
 ];
 
-// Define the chart configuration
-const chartConfig: ChartConfig = {
-  eth: {
-    label: "ETH",
-    color: "#2563eb",
-  },
-  usdt: {
-    label: "USDT",
-    color: "#f97316",
-  },
-};
+// Tooltip formatter for multi-coin data
+const formatTooltip = (value: number, name: string) => [
+  `${value}`,
+  name.toUpperCase(),
+];
 
-const Market: React.FC = () => {
-  const [hoveredData, setHoveredData] = useState<ChartData | null>(null);
-
-  const handleMouseOver = (data: ChartData | undefined) => {
-    setHoveredData(data || null);
-  };
-
-  const handleMouseOut = () => {
-    setHoveredData(null);
-  };
-
+const MarketChart: React.FC = () => {
   return (
     <Card className="shadow-none">
       {/* Card Header */}
       <CardHeader>
         <CardTitle className="text-xl font-bold">
-          Today's Crypto Market Overview
+          Ethereum Network Market Overview
         </CardTitle>
         <CardDescription>
-          This chart provides a snapshot of the current activity across major
-          networks under the Ethereum ecosystem. It highlights the volume of ETH
-          and USDT transactions on popular networks like Ethereum Mainnet,
-          Polygon, Arbitrum, and more. Use this data to assess network
-          performance and market trends at a glance.
+          A multi-coin chart showing price movements (Open, High, Low, Close)
+          and trading volumes for ETH and USDT under the Ethereum network.
         </CardDescription>
       </CardHeader>
 
-      {/* Persistent Coin Price Display */}
-      <div className="p-4 text-center">
-        {hoveredData ? (
-          <p className="text-lg font-semibold">
-            {hoveredData.network}: ETH - {hoveredData.eth}, USDT -{" "}
-            {hoveredData.usdt}
-          </p>
-        ) : (
-          <p className="text-gray-500">Hover over a bar to see details</p>
-        )}
-      </div>
-
       {/* Card Content */}
       <CardContent>
-        <ChartContainer config={chartConfig} className="min-h-[200px] w-full">
-          <BarChart
-            accessibilityLayer
-            data={chartData}
-            onMouseMove={(state) =>
-              handleMouseOver(state?.activePayload?.[0]?.payload as ChartData)
-            }
-            onMouseLeave={handleMouseOut}
-          >
-            <CartesianGrid vertical={false} />
-            <XAxis
-              dataKey="network"
-              tickLine={false}
-              tickMargin={10}
-              axisLine={false}
-              tickFormatter={(value: string) => value.slice(0, 3)}
+        <ResponsiveContainer width="100%" height={400}>
+          <ComposedChart data={marketData}>
+            <CartesianGrid strokeDasharray="3 3" />
+            <XAxis dataKey="date" />
+            <YAxis />
+            <Tooltip formatter={formatTooltip} />
+            <Legend />
+
+            {/* ETH Price Line */}
+            <Line
+              type="monotone"
+              dataKey="ethClose"
+              name="ETH Close"
+              stroke="#2563eb"
+              dot={false}
+              activeDot={{ r: 8 }}
             />
-            <ChartTooltip content={<ChartTooltipContent />} />
-            <ChartLegend content={<ChartLegendContent />} />
-            <Bar dataKey="eth" fill="#2563eb" radius={4} /> {/* bg-blue-600 */}
-            <Bar dataKey="usdt" fill="#f97316" radius={4} />{" "}
-            {/* bg-orange-600 */}
-          </BarChart>
-        </ChartContainer>
+
+            {/* USDT Price Line */}
+            <Line
+              type="monotone"
+              dataKey="usdtClose"
+              name="USDT Close"
+              stroke="#f97316"
+              dot={false}
+              activeDot={{ r: 8 }}
+            />
+
+            {/* ETH Volume Bar */}
+            <Bar
+              dataKey="ethVolume"
+              name="ETH Volume"
+              fill="#60a5fa"
+              opacity={0.7}
+              barSize={8}
+            />
+
+            {/* USDT Volume Bar */}
+            <Bar
+              dataKey="usdtVolume"
+              name="USDT Volume"
+              fill="#fdba74"
+              opacity={0.7}
+              barSize={8}
+            />
+          </ComposedChart>
+        </ResponsiveContainer>
       </CardContent>
 
       {/* Card Footer */}
@@ -131,4 +190,4 @@ const Market: React.FC = () => {
   );
 };
 
-export default Market;
+export default MarketChart;

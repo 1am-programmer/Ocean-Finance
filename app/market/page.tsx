@@ -1,10 +1,10 @@
 import React from "react";
-import Market from "@/components/Market";
+import MarketChart from "@/components/Market";
 
 const page = () => {
   return (
     <div className="">
-      <Market />
+      <MarketChart />
     </div>
   );
 };

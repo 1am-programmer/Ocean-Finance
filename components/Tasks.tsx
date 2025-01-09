@@ -7,7 +7,6 @@ import Link from "next/link";
 import TestToken from "./TestToken";
 import Image from "next/image";
 
-// Add Images  Image
 const Tasks = () => {
   return (
     <div>
@@ -28,7 +27,7 @@ const Tasks = () => {
             <div className="mb-5">
               <h1 className="text-xl font-bold">Get test tokens</h1>
               <p>
-                Click the button below to get some Arb Sepolia ETH, to begin
+                Click the button below to get some Arb Sepolia Eth, to begin
                 testing the app.
               </p>
             </div>
